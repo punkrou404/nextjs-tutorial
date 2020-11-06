@@ -1,4 +1,5 @@
 import Date from '../components/date'
+import { GetStaticProps } from 'next'
 import { getSortedPostsData } from '../lib/posts'
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
@@ -44,7 +45,7 @@ export default function Home({ allPostsData }) {
  * SSG用。ビルド時に呼び出される。
  * @returns {object} props
  */
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData()
   return {
     props: {

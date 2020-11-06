@@ -27,7 +27,7 @@ export function getSortedPostsData() {
         // idとメタデータを返却
         return {
             id,
-            ...matterResult.data
+            ...(matterResult.data as { date: string; title: string })
         }
     })
 
